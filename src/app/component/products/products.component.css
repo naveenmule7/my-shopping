@@ -1,0 +1,27 @@
+.card {
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    height: 200px;
+}
+
+.card-footer {
+    padding: 0;
+    background: #fff;
+    display: grid !important;
+}
+
+.card-footer button {
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.filterCard {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.no-border-radius {
+    border-radius: 0% !important;
+}
