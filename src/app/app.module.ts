@@ -29,6 +29,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { UnAuthorizedComponent } from './component/un-authorized/un-authorized.component';
+import { WishlistService } from './services/wishlist.service';
+import { WishlistComponent } from './component/wishlist/wishlist.component';
 
 
 
@@ -46,6 +48,7 @@ import { UnAuthorizedComponent } from './component/un-authorized/un-authorized.c
     { path: 'order-detail/:id', component: OrderDetailComponent, canActivate: [AuthGuard]},
     { path: 'order-success/:id', component: OrderSuccessComponent, canActivate: [AuthGuard] },
     { path: 'my-orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
+    { path: 'my-wishlist', component: WishlistComponent, canActivate: [AuthGuard] },
     { path: '**', component: NotFoundComponent }
   ]
 
@@ -62,7 +65,8 @@ import { UnAuthorizedComponent } from './component/un-authorized/un-authorized.c
     MyOrdersComponent,
     OrderDetailComponent,
     NotFoundComponent,
-    UnAuthorizedComponent
+    UnAuthorizedComponent,
+    WishlistComponent
     
     
     
@@ -81,7 +85,14 @@ import { UnAuthorizedComponent } from './component/un-authorized/un-authorized.c
     
     
   ],
-  providers: [AuthService, CategoryService,ProductService,ShoppingCartService,OrderService, AuthGuard, AdminGuard],
+  providers: [AuthService, 
+    CategoryService,
+    ProductService,
+    ShoppingCartService,
+    OrderService,
+    WishlistService,
+    AuthGuard, 
+    AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
